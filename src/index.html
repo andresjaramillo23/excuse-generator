@@ -12,6 +12,7 @@
     />
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
+
   <body>
     <div class="container">
       <div class="row">
@@ -20,13 +21,27 @@
           class="text-center text-uppercase fs-1 fw-bold font-monospace text-decoration-underline"
         ></p>
       </div>
-
-      <input
-        id="b1"
-        type="button"
-        onclick="nonsenseGenerator()"
-        value="click me!"
-      />
+      <form class="form">
+        <label
+          class="ext-center text-uppercase fs-6 fw-italic font-monospace"
+          for="blameText"
+        >
+          Someone to blame:</label
+        ><br />
+        <input
+          type="text"
+          placeholder="A new value"
+          id="blameText"
+          name="blameText"
+          onfocus="if(this.value==this.value) this.value='';"
+        /><br />
+        <input
+          id="b1"
+          type="button"
+          onclick="nonsenseGenerator()"
+          value="click me!"
+        />
+      </form>
     </div>
     <script src="app.js"></script>
   </body>
