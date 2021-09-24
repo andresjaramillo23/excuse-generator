@@ -29,7 +29,7 @@ function nonsenseGenerator() {
   let sentences = [who, action, what, when];
 
   for (let i = 0; i < sentences.length; i++)
-    sentence.concat(getSentence(sentences[i]));
+    sentence += getSentence(sentences[i]);
 
   return sentence;
 }
@@ -46,5 +46,5 @@ btn.onclick = function() {
     who.push(whoToBlame);
   }
   document.getElementById("blameText").value = "";
-  document.getElementById("excuse").innerHTML = "nalgas";
+  document.getElementById("excuse").innerHTML = nonsenseGenerator();
 };
