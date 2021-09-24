@@ -37,4 +37,8 @@ function nonsenseGenerator() {
   return nonsenseSentence;
 }
 
-document.getElementById("excuse").innerHTML = nonsenseGenerator();
+const btn = document.getElementById("b1");
+
+btn.onclick = function() {
+  document.getElementById("excuse").innerHTML = nonsenseGenerator();
+};
