@@ -1,5 +1,10 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 .container {
-  margin-top: 400px;
+  margin-top: 350px;
+}
+
+#b1 {
+  margin-top: 200px;
   vertical-align: middle;
+  margin-left: 600px;
 }
