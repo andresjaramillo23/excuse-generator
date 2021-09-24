@@ -25,12 +25,13 @@ function getRandomInt(arraySize) {
 }
 
 function nonsenseGenerator() {
-  return (
-    getSentence(who) +
-    getSentence(action) +
-    getSentence(what) +
-    getSentence(when)
-  );
+  let sentence = "";
+  let sentences = [who, action, what, when];
+
+  for (let i = 0; i < sentences.length; i++)
+    sentence.concat(getSentence(sentences[i]));
+
+  return sentence;
 }
 
 function getSentence(array) {
@@ -45,5 +46,5 @@ btn.onclick = function() {
     who.push(whoToBlame);
   }
   document.getElementById("blameText").value = "";
-  document.getElementById("excuse").innerHTML = nonsenseGenerator();
+  document.getElementById("excuse").innerHTML = "nalgas";
 };
