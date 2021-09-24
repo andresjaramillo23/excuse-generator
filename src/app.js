@@ -10,7 +10,7 @@ window.onload = function() {
 };
 
 function getRandomInt(arraySize) {
-  return Math.floor(Math.random * (arraySize - 0) + 0);
+  return Math.floor(Math.random() * arraySize);
 }
 
 function nonsenseGenerator() {
@@ -26,7 +26,7 @@ function nonsenseGenerator() {
   ];
 
   var nonsenseSentence =
-    who[getRandomInt(who.length)] +
+    who[getRandomInt(action.length)] +
     " " +
     action[getRandomInt(action.length)] +
     " " +
@@ -36,3 +36,5 @@ function nonsenseGenerator() {
 
   return nonsenseSentence;
 }
+
+document.getElementById("excuse").innerHTML = nonsenseGenerator();
