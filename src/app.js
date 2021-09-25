@@ -38,13 +38,22 @@ function getSentence(array) {
   return array[getRandomInt(array.length)] + " ";
 }
 
+function isAlreadyThere(word) {
+  let isAlready = false;
+  for (let j = 0; j < who.length; j++) {
+    let wordFromArray = who[j];
+    if (word.toUpperCase() == wordFromArray.toUpperCase()) isAlready = true;
+  }
+  return isAlready;
+}
+
 const btn = document.getElementById("b1");
 
 btn.onclick = function() {
   var whoToBlame = document.getElementById("blameText").value;
-  if (whoToBlame.length > 0) {
+  if (whoToBlame.length > 0 && !isAlreadyThere(whoToBlame))
     who.push(whoToBlame);
-  }
+
   document.getElementById("blameText").value = "";
   document.getElementById("excuse").innerHTML = nonsenseGenerator();
 };
