@@ -38,10 +38,10 @@ function getSentence(array) {
   return array[getRandomInt(array.length)] + " ";
 }
 
-function isAlreadyThere(word) {
+function isAlreadyThere(array, word) {
   let isAlready = false;
-  for (let j = 0; j < who.length; j++) {
-    let wordFromArray = who[j];
+  for (let j = 0; j < array.length; j++) {
+    let wordFromArray = array[j];
     if (word.toUpperCase() == wordFromArray.toUpperCase()) isAlready = true;
   }
   return isAlready;
@@ -50,10 +50,26 @@ function isAlreadyThere(word) {
 const btn = document.getElementById("b1");
 
 btn.onclick = function() {
-  var whoToBlame = document.getElementById("blameText").value;
-  if (whoToBlame.length > 0 && !isAlreadyThere(whoToBlame))
-    who.push(whoToBlame);
+  let valueInput = document.getElementById("blameText").value;
+  let keyInput = document.getElementsByName("myBrowser")[0].value;
+  if (valueInput.length > 0) {
+    switch (keyInput) {
+      case "Who":
+        if (!isAlreadyThere(who, valueInput)) who.push(valueInput);
+        break;
+      case "Action":
+        if (!isAlreadyThere(action, valueInput)) action.push(valueInput);
+        break;
+      case "What":
+        if (!isAlreadyThere(what, valueInput)) what.push(valueInput);
+        break;
+      case "When":
+        if (!isAlreadyThere(when, valueInput)) when.push(valueInput);
+        break;
+    }
+  }
 
   document.getElementById("blameText").value = "";
+  document.getElementsByName("myBrowser")[0].value = "";
   document.getElementById("excuse").innerHTML = nonsenseGenerator();
 };
