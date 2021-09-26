@@ -15,33 +15,49 @@
 
   <body>
     <div class="container">
-      <div class="row">
-        <p
-          id="excuse"
-          class="text-center text-uppercase fs-1 fw-bold font-monospace text-decoration-underline"
-        ></p>
+      <div id="firstRow" class="row justify-content-center">
+        <div class="col">
+          <p
+            id="excuse"
+            class="text-center text-uppercase fs-1 fw-bold font-monospace text-decoration-underline"
+          ></p>
+        </div>
       </div>
-      <form class="form">
-        <label
-          class="ext-center text-uppercase fs-6 fw-italic font-monospace"
-          for="blameText"
-        >
-          Someone to blame:</label
-        ><br />
-        <input
-          type="text"
-          placeholder="A new value"
-          id="blameText"
-          name="blameText"
-          onfocus="if(this.value==this.value) this.value='';"
-        /><br />
-        <input
-          id="b1"
-          type="button"
-          onclick="nonsenseGenerator()"
-          value="click me!"
-        />
-      </form>
+      <div id="secondRow" class="row justify-content-center">
+        <div class="col-6">
+          <label class="ext-center text-uppercase fs-6 fw-italic font-monospace"
+            >Choose an input type from this list:
+            <input
+              type="text"
+              placeholder="Select value"
+              list="browsers"
+              name="myBrowser"
+              style="width: 150px;"
+          /></label>
+          <datalist id="browsers">
+            <option value="Who"></option>
+            <option value="Action"></option>
+            <option value="What"></option>
+            <option value="When"></option>
+          </datalist>
+        </div>
+        <div class="col-4">
+          <label class="ext-center text-uppercase fs-6 fw-italic font-monospace"
+            >Someone to blame:</label
+          >
+          <input
+            type="text"
+            placeholder="Type value"
+            id="blameText"
+            name="blameText"
+          />
+        </div>
+      </div>
+      <div id="thirdRow" class="row justify-content-center">
+        <div class="col-1">
+          <input id="b1" type="button" value="click me!" />
+        </div>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
