@@ -50,8 +50,9 @@ function isAlreadyThere(array, word) {
 const btn = document.getElementById("b1");
 
 btn.onclick = function() {
-  let valueInput = document.getElementById("blameText").value;
-  let keyInput = document.getElementsByName("myBrowser")[0].value;
+  let valueInput = document.getElementById("inputWord").value;
+  let keyInput = document.getElementsByName("myWordsList")[0].value;
+
   if (valueInput.length > 0) {
     switch (keyInput) {
       case "Who":
@@ -69,7 +70,7 @@ btn.onclick = function() {
     }
   }
 
-  document.getElementById("blameText").value = "";
-  document.getElementsByName("myBrowser")[0].value = "";
+  document.getElementById("inputWord").value = "";
+  document.getElementsByName("myWordsList")[0].value = "";
   document.getElementById("excuse").innerHTML = nonsenseGenerator();
 };
