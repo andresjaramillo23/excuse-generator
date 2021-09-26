@@ -1,6 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 #firstRow {
-  margin-top: 150px;
+  margin-top: 250px;
 }
 
 #secondRow {
@@ -10,4 +10,10 @@
 #b1 {
   margin-top: 100px;
   margin-left: 50px;
+}
+
+#fofo {
+  margin: 0%;
+  padding: 0%;
+  border: 0ch;
 }

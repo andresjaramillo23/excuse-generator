@@ -1,71 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-    <link rel="shortcut icon" href="./4geeks.ico" />
-  </head>
 
-  <body>
-    <div class="container">
-      <div id="firstRow" class="row justify-content-center">
-        <div class="col">
-          <p
-            id="who"
-            class="text-primary text-center text-uppercase fs-1 fw-bold font-monospace text-decoration-underline"
-          ></p>
-          <p
-            id="action"
-            class="text-success text-center text-uppercase fs-1 fw-bold font-monospace text-decoration-underline"
-          ></p>
-          <p
-            id="what"
-            class="text-warning text-center text-uppercase fs-1 fw-bold font-monospace text-decoration-underline"
-          ></p>
-          <p
-            id="when"
-            class="text-danger text-center text-uppercase fs-1 fw-bold font-monospace text-decoration-underline"
-          ></p>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello Rigo with Vanilla.js</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+  <link rel="shortcut icon" href="./4geeks.ico" />
+</head>
+
+<body>
+  <div class="container">
+    <div id="firstRow" class="row justify-content-center no-gutters">
+      <div class="col-md-auto">
+        <p id="who"
+          class="text-primary text-center text-uppercase fs-1 fw-bold font-monospace"></p>
+        <p id="lolo" class="text-primary text-center text-uppercase fs-1 fw-bold font-monospace text-decoration-underline"></p>
       </div>
-      <div id="secondRow" class="row justify-content-center">
-        <div class="col-6">
-          <label class="ext-center text-uppercase fs-6 fw-italic font-monospace"
-            >Choose an input type from this list:
-            <input
-              type="text"
-              placeholder="Select value"
-              list="sentencesList"
-              name="myWordsList"
-              style="width: 150px;"
-          /></label>
-          <datalist id="sentencesList">
-            <option value="Who"></option>
-            <option value="Action"></option>
-            <option value="What"></option>
-            <option value="When"></option>
-          </datalist>
-        </div>
-        <div class="col-4">
-          <label class="ext-center text-uppercase fs-6 fw-italic font-monospace"
-            >Type sentence:</label
-          >
-          <input type="text" placeholder="Type value" id="inputWord" />
-        </div>
+      <div class="col-md-auto">
+        <p id="action"
+          class="text-success text-center text-uppercase fs-1 fw-bold font-monospace text-decoration-underline"></p>
       </div>
-      <div id="thirdRow" class="row justify-content-center">
-        <div class="col-1">
-          <input id="b1" type="button" value="click me!" />
-        </div>
+      <div class="col-md-auto">
+        <p id="what"
+          class="text-warning text-center text-uppercase fs-1 fw-bold font-monospace text-decoration-underline"></p>
+      </div>
+      <div class="col-md-auto">
+        <p id="when"
+          class="text-danger text-center text-uppercase fs-1 fw-bold font-monospace text-decoration-underline"></p>
       </div>
     </div>
-    <script src="app.js"></script>
-  </body>
+  </div>
+  <div id="secondRow" class="row justify-content-center">
+    <div class="col-md-auto">
+      <label class="ext-center text-uppercase fs-6 fw-italic font-monospace">Choose an input type from this list:
+        <input type="text" placeholder="Select value" list="sentencesList" name="myWordsList"
+          style="width: 150px;" /></label>
+      <datalist id="sentencesList">
+        <option value="Who"></option>
+        <option value="Action"></option>
+        <option value="What"></option>
+        <option value="When"></option>
+      </datalist>
+    </div>
+    <div class="col-md-auto">
+      <label class="ext-center text-uppercase fs-6 fw-italic font-monospace">Type sentence:</label>
+      <input type="text" placeholder="Type value" id="inputWord" />
+    </div>
+  </div>
+  <div id="thirdRow" class="row justify-content-center">
+    <div class="col-1">
+      <input id="b1" type="button" value="click me!" />
+    </div>
+  </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
 </html>

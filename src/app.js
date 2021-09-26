@@ -20,6 +20,8 @@ let when = [
   "while I was praying"
 ];
 
+const enteredWords = new Array();
+
 function getRandomInt(arraySize) {
   return Math.floor(Math.random() * arraySize);
 }
@@ -49,10 +51,44 @@ function isAlreadyThere(array, word) {
 
 const btn = document.getElementById("b1");
 
-btn.onclick = function() {
-  let valueInput = document.getElementById("inputWord").value;
-  let keyInput = document.getElementsByName("myWordsList")[0].value;
+function setSentencesInHtml() {
+  let sentenceGenerated = nonsenseGenerator();
 
+  const sentencesToValues = new Map();
+  sentencesToValues.set("who", 0);
+  sentencesToValues.set("action", 1);
+  sentencesToValues.set("what", 2);
+  sentencesToValues.set("when", 3);
+
+  for (let [key, value] of sentencesToValues.entries()) {
+    let valuesMatched = false;
+    for (let t = 0; t < enteredWords.length; t++) {
+      if (
+        sentenceGenerated[value].toUpperCase() == enteredWords[t].toUpperCase()
+      )
+        valuesMatched = true;
+    }
+
+    if (valuesMatched) {
+      document.getElementById(key).innerHTML = "";
+      //document.getElementById(key).style.display = "none";
+      //document.getElementById("lolo").style.display = "block";
+      document.getElementById("lolo").innerHTML = sentenceGenerated[value];
+    } else {
+      document.getElementById("lolo").innerHTML = "";
+      //document.getElementById("lolo").style.display = "none";
+      //document.getElementById(key).style.display = "block";
+      document.getElementById(key).innerHTML = sentenceGenerated[value];
+    }
+  }
+}
+
+function resetInputValues() {
+  document.getElementById("inputWord").value = "";
+  document.getElementsByName("myWordsList")[0].value = "";
+}
+
+function populateSentencesWithNewInput(valueInput, keyInput) {
   if (valueInput.length > 0) {
     switch (keyInput) {
       case "Who":
@@ -69,11 +105,17 @@ btn.onclick = function() {
         break;
     }
   }
+}
 
-  document.getElementById("inputWord").value = "";
-  document.getElementsByName("myWordsList")[0].value = "";
-  document.getElementById("who").innerHTML = nonsenseGenerator()[0];
-  document.getElementById("action").innerHTML = nonsenseGenerator()[1];
-  document.getElementById("what").innerHTML = nonsenseGenerator()[2];
-  document.getElementById("when").innerHTML = nonsenseGenerator()[3];
+btn.onclick = function() {
+  let valueInput = document.getElementById("inputWord").value;
+  if (valueInput.length > 0) enteredWords.push(valueInput);
+
+  console.log(enteredWords);
+  let keyInput = document.getElementsByName("myWordsList")[0].value;
+
+  populateSentencesWithNewInput(valueInput, keyInput);
+
+  resetInputValues();
+  setSentencesInHtml();
 };
