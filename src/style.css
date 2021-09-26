@@ -1,14 +1,13 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
-.container {
-  margin-top: 300px;
+#firstRow {
+  margin-top: 350px;
+}
+
+#secondRow {
+  margin-top: 150px;
 }
 
 #b1 {
   margin-top: 100px;
   margin-left: 50px;
-}
-
-.form {
-  margin-top: 100px;
-  margin-left: 600px;
 }
