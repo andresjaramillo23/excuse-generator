@@ -25,17 +25,17 @@ function getRandomInt(arraySize) {
 }
 
 function nonsenseGenerator() {
-  let sentence = "";
+  const sentence = [];
   let sentences = [who, action, what, when];
 
   for (let i = 0; i < sentences.length; i++)
-    sentence += getSentence(sentences[i]);
+    sentence[i] = getSentence(sentences[i]);
 
   return sentence;
 }
 
 function getSentence(array) {
-  return array[getRandomInt(array.length)] + " ";
+  return array[getRandomInt(array.length)];
 }
 
 function isAlreadyThere(array, word) {
@@ -72,5 +72,8 @@ btn.onclick = function() {
 
   document.getElementById("inputWord").value = "";
   document.getElementsByName("myWordsList")[0].value = "";
-  document.getElementById("excuse").innerHTML = nonsenseGenerator();
+  document.getElementById("who").innerHTML = nonsenseGenerator()[0];
+  document.getElementById("action").innerHTML = nonsenseGenerator()[1];
+  document.getElementById("what").innerHTML = nonsenseGenerator()[2];
+  document.getElementById("when").innerHTML = nonsenseGenerator()[3];
 };
