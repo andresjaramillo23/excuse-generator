@@ -9,6 +9,8 @@ window.onload = function() {
   console.log("Hello Rigo");
 };
 
+document.onload = function() {};
+
 let who = ["The dog", "My grandma", "His turtle", "My bird"];
 let action = ["ate", "peed", "crushed", "broke"];
 let what = ["my homework", "the keys", "the car"];
@@ -69,17 +71,11 @@ function setSentencesInHtml() {
         valuesMatched = true;
     }
 
-    if (valuesMatched) {
-      document.getElementById(key).innerHTML = "";
-      //document.getElementById(key).style.display = "none";
-      //document.getElementById("lolo").style.display = "block";
-      document.getElementById("lolo").innerHTML = sentenceGenerated[value];
-    } else {
-      document.getElementById("lolo").innerHTML = "";
-      //document.getElementById("lolo").style.display = "none";
-      //document.getElementById(key).style.display = "block";
-      document.getElementById(key).innerHTML = sentenceGenerated[value];
-    }
+    if (valuesMatched)
+      document.getElementById(key).style.textDecoration = "underline";
+    else document.getElementById(key).style.textDecoration = "none";
+
+    document.getElementById(key).innerHTML = sentenceGenerated[value];
   }
 }
 
