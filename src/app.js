@@ -84,6 +84,10 @@ function resetInputValues() {
   document.getElementsByName("myWordsList")[0].value = "";
 }
 
+function populateArrayOfNewWordsEntered(valueInput) {
+  if (valueInput.length > 0) enteredWords.push(valueInput);
+}
+
 function populateSentencesWithNewInput(valueInput, keyInput) {
   if (valueInput.length > 0) {
     switch (keyInput) {
@@ -105,11 +109,9 @@ function populateSentencesWithNewInput(valueInput, keyInput) {
 
 btn.onclick = function() {
   let valueInput = document.getElementById("inputWord").value;
-  if (valueInput.length > 0) enteredWords.push(valueInput);
-
-  console.log(enteredWords);
   let keyInput = document.getElementsByName("myWordsList")[0].value;
 
+  populateArrayOfNewWordsEntered(valueInput);
   populateSentencesWithNewInput(valueInput, keyInput);
 
   resetInputValues();
