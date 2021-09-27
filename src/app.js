@@ -45,9 +45,9 @@ function getSentence(array) {
 function isAlreadyThere(array, word) {
   let isAlready = false;
   for (let j = 0; j < array.length; j++) {
-    let wordFromArray = array[j];
-    if (word.toUpperCase() == wordFromArray.toUpperCase()) isAlready = true;
+    if (word.toUpperCase() == array[j].toUpperCase()) isAlready = true;
   }
+
   return isAlready;
 }
 
